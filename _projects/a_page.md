@@ -10,7 +10,7 @@ custom_js:
   - justcharts
 ---
 <vegachart schema-url="{{ site.baseurl }}/assets/json/cars.json" style="width: 100%"></vegachart>
-<vegachart schema-url="{{ site.baseurl }}/assets/json/chart1.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/example_hconcat.json" style="width: 100%"></vegachart>
 
 # Example including vega-lite
 
