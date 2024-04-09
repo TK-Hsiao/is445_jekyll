@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300
+    }
+  },
+  "hconcat": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/movies.json"
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "param_5",
+            "value": "steelblue"
+          },
+          "value": "grey"
+        },
+        "x": {
+          "field": "IMDB_Rating",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Worldwide_Gross",
+          "scale": {
+            "type": "linear"
+          },
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "type": "point"
+      },
+      "name": "view_9"
+    },
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/movies.json"
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "param_5",
+            "value": "steelblue"
+          },
+          "value": "grey"
+        },
+        "x": {
+          "bin": {},
+          "field": "IMDB_Rating",
+          "type": "quantitative"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "Worldwide_Gross",
+          "scale": {
+            "type": "log"
+          },
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "type": "bar"
+      },
+      "name": "view_10"
+    }
+  ],
+  "params": [
+    {
+      "name": "param_5",
+      "select": {
+        "type": "interval"
+      },
+      "views": [
+        "view_9",
+        "view_10"
+      ]
+    }
+  ]
+}
